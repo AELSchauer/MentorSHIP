@@ -18,11 +18,9 @@ var Body = React.createClass({
   },
 
   filterMentorsByGender(gender){
-    // debugger
     if (gender == "All") {
       return this.setState({mentors: this.state.allMentors})
     } else {
-      debugger
       let mentors = this.state.allMentors.filter((mentor) => {
         return mentor.gender === gender
       })
