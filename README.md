@@ -73,12 +73,11 @@ This will add an application.yml file to your config folder
 
 Add your census keys to the application.yml file. Use fuzzy finder(cmd + t) if you can't see the file in your file tree. Keys should be formatted as such.
 
-CENSUS_ID: eba503f490a06e4065366baa96 (CHANGE )
-CENSUS_SECRET: 78a08c6eafac10bd1adb2c05fd107 (CHANGE TO YOUR PRODUCTION SECRET)
-CENSUS_ACCESS_TOKEN: 3d8f68e0aa477176133655427eff29e7b77de72 (CHANGE TO YOUR PRODUCTION TOKEN)
-CENSUS_URL: "https://turing-census.herokuapp.com" (USE THIS URL FOR PRODUCTION ON HEROKU)
-GOOGLE_API_KEY: AIzaSyBBlwAFsEo5JfrMDQAgI_ya6zINxPwK1jg (USE THIS KEY)
-GEONAMES_USERNAME: 'turing.mentorship' (USE THIS)
+> CENSUS_ID: eba503f490a06e4065366baa96 (CHANGE )
+> CENSUS_SECRET: 78a08c6eafac10bd1adb2c05fd107 (CHANGE TO YOUR PRODUCTION SECRET)
+> CENSUS_ACCESS_TOKEN: 3d8f68e0aa477176133655427eff29e7b77de72 (CHANGE TO YOUR PRODUCTION TOKEN)
+> CENSUS_URL: "https://turing-census.herokuapp.com" (USE THIS URL FOR PRODUCTION ON HEROKU)
+> GEONAMES_USERNAME: 'turing.mentorship' (USE THIS)
 
 
 #### 7) To start the SSL web server open another terminal window and run
@@ -134,10 +133,12 @@ thin start -p 3001 --ssl --ssl-key-file ~/.ssh/server.key --ssl-cert-file ~/.ssh
 
 ### Where are the apps?
 
-* Our deployable app: (OLD)https://turing-mentorship-prod.herokuapp.com/
-https://shielded-meadow-66130.herokuapp.com/mentors
+* Our deployable app:
+  * (DEPRECATED) https://turing-mentorship-prod.herokuapp.com/
+  * https://shielded-meadow-66130.herokuapp.com/mentors
 
-* Our staging app: (OLD)https://turing-mentorship-staging.herokuapp.com/
+* Our staging app:
+  * (DEPRECATED) https://turing-mentorship-staging.herokuapp.com/
 
 To get access to both of the above reach out to your Project Manager / Project Owner and they will add you to the app.
 
@@ -147,14 +148,14 @@ To get access to both of the above reach out to your Project Manager / Project O
 * `bundle exec rspec`
 
 ### Important notes for seed file
-* to populate the seed file with mentors we hit the Census API with a unique access token. This token expires every 90 days. The current token was generated on 02/08/2017. If you are trying to run `rake db:seed` after 05/08/2017 you will need to OAuth in first and get a new access token. We have set up the seed to take an environment variable. We recommend using the figaro gem to help set up the `appication.yml` file.
+* To populate the seed file with mentors we hit the Census API with a unique access token. This token expires every 90 days. The current token was generated on 02/08/2017. If you are trying to run `rake db:seed` after 05/08/2017 you will need to OAuth in first and get a new access token. We have set up the seed to take an environment variable. We recommend using the figaro gem to help set up the `appication.yml` file.
 
-To create a new token do the following.  The hacky/easy way is to place a `pry` in Session#create at the top. Then boot your `thin` server (See Running / Development for details) and log in with Census. Once you log in you will hit the `pry` and in params find your unique access token. Then update your `CENSUS_ACCESS_TOKEN` with this token and you will be all set.  
+* To create a new token do the following.  The hacky/easy way is to place a `pry` in Session#create at the top. Then boot your `thin` server (See Running / Development for details) and log in with Census. Once you log in you will hit the `pry` and in params find your unique access token. Then update your `CENSUS_ACCESS_TOKEN` with this token and you will be all set.
 
 ### Environment variables needed
 * In the root of the project is an `application.yml.sample` file. This file contains all environment variables we are using in this project. We didn't push keys (for obvious reasons) but wanted to make sure any future teams knew which variables they needed to use.
 
-###CensusService info
+### CensusService info
 * We are currently taking in info from the mentor dashboard edit and using it to update both our database and Census' database. At this point our database updates correctly and passes the necessary info for Census to the CensusService.new.update_census method. It doesn't make a connection to the census api yet (too late in the mod to accomplish this). You will have to work with Census to make sure this end point `https://census-app-staging.herokuapp.com/api/v1/users/#{id}, params.to_json` is hooked up before you can submit. We have already posted a PR to Census that will tell them the type of data and structure to expect so building it out shouldn't be too much work.
 
 ## Endpoints
