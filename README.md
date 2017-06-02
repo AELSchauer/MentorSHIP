@@ -22,9 +22,11 @@ Add yourself to this list if you helped.
 
 ## Installation
 
-* `git clone git@github.com:turingschool-projects/MentorSHIP.git`
-* `cd MentorSHIP`
-* `bundle exec rake db:create db:migrate db:seed`
+```
+git clone git@github.com:turingschool-projects/MentorSHIP.git
+cd MentorSHIP
+bundle exec rake db:create db:migrate db:seed
+```
 
 ## Running / Development
 
@@ -82,9 +84,11 @@ This will add an application.yml file to your config folder.
 
 On Slack, open the public channel called 'mentorship-project'. There are a series of snippets on that channel. One has all the application keys. Copy and paste that entire snippet into your application.yml file.
 
-## 8) To start the SSL web server open another terminal window and run
+## 9) Start the SSL web server in another terminal window
 
+```
 thin start -p 3001 --ssl --ssl-key-file ~/.ssh/server.key --ssl-cert-file ~/.ssh/server.crt
+```
 
  ### Travis-CI
 
