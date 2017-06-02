@@ -30,7 +30,7 @@ bundle exec rake db:create db:migrate db:seed
 
 ## Running / Development
 
-Because of the Oauth Census, you must follow these special instructions for setting up and running a local server.
+So because of the Oauth Census had to use there are special instructions for running a local server. This walkthrough will get you set up to run a local HTTPS server so you can run dev server and test locally.
 
 ## 1) Create your private key (any password will do, we remove it below)
 
@@ -59,6 +59,7 @@ Fill out the Common Name field as follows and skip the rest:
 ```
 Common Name: localhost.ssl
 ```
+* MUST have localhost.ssl as the common name to keep browsers happy
 
 ## 5) Generate self signed ssl certificate
 
@@ -84,7 +85,15 @@ This will add an application.yml file to your config folder.
 
 On Slack, open the public channel called 'mentorship-project'. There are a series of snippets on that channel. One has all the application keys. Copy and paste that entire snippet into your application.yml file.
 
-## 9) Start the SSL web server in another terminal window
+Add your census keys to the application.yml file. Use fuzzy finder(cmd + t) if you can't see the file in your file tree. Keys should be formatted as such.
+  		  
+ * CENSUS_ID: eba503f490a06e4065366baa96 (CHANGE )
+ * CENSUS_SECRET: 78a08c6eafac10bd1adb2c05fd107 (CHANGE TO YOUR PRODUCTION SECRET)
+ * CENSUS_ACCESS_TOKEN: 3d8f68e0aa477176133655427eff29e7b77de72 (CHANGE TO YOUR PRODUCTION TOKEN)
+ * CENSUS_URL: "https://turing-census.herokuapp.com" (USE THIS URL FOR PRODUCTION ON HEROKU)
+ * GEONAMES_USERNAME: 'turing.mentorship' (USE THIS)
+
+## 9) Start the SSL web server in your project root in terminal
 
 ```
 thin start -p 3001 --ssl --ssl-key-file ~/.ssh/server.key --ssl-cert-file ~/.ssh/server.crt
