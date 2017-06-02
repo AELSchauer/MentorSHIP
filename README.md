@@ -73,12 +73,12 @@ This will add an application.yml file to your config folder
 
 Add your census keys to the application.yml file. Use fuzzy finder(cmd + t) if you can't see the file in your file tree. Keys should be formatted as such.
 
-CENSUS_ID: eba503f490a06e4065366baa96 (CHANGE )
-CENSUS_SECRET: 78a08c6eafac10bd1adb2c05fd107 (CHANGE TO YOUR PRODUCTION SECRET)
-CENSUS_ACCESS_TOKEN: 3d8f68e0aa477176133655427eff29e7b77de72 (CHANGE TO YOUR PRODUCTION TOKEN)
-CENSUS_URL: "https://turing-census.herokuapp.com" (USE THIS URL FOR PRODUCTION ON HEROKU)
-GOOGLE_API_KEY: AIzaSyBBlwAFsEo5JfrMDQAgI_ya6zINxPwK1jg (USE THIS KEY)
-GEONAMES_USERNAME: 'turing.mentorship' (USE THIS)
+> CENSUS_ID: eba503f490a06e4065366baa96 (CHANGE )
+> CENSUS_SECRET: 78a08c6eafac10bd1adb2c05fd107 (CHANGE TO YOUR PRODUCTION SECRET)
+> CENSUS_ACCESS_TOKEN: 3d8f68e0aa477176133655427eff29e7b77de72 (CHANGE TO YOUR PRODUCTION TOKEN)
+> CENSUS_URL: "https://turing-census.herokuapp.com" (USE THIS URL FOR PRODUCTION ON HEROKU)
+> GOOGLE_API_KEY: AIzaSyBBlwAFsEo5JfrMDQAgI_ya6zINxPwK1jg (USE THIS KEY)
+> GEONAMES_USERNAME: 'turing.mentorship' (USE THIS)
 
 
 #### 7) To start the SSL web server open another terminal window and run
