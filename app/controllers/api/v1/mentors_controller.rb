@@ -11,7 +11,6 @@ class Api::V1::MentorsController < Api::V1::BaseController
   end
 
   def update
-    binding.pry
     user = User.find(params[:id])
     user.update(user_params)
     mentor = Mentor.find_or_create_by(user_id: params[:id])

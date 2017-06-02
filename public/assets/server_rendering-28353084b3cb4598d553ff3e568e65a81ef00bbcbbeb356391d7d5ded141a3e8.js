@@ -21818,7 +21818,7 @@ var Mentor = React.createClass({
           React.createElement(
             "strong",
             null,
-            "Bio:  "
+            "Bio: "
           ),
           this.props.mentor.bio
         )
