@@ -30,7 +30,7 @@ bundle exec rake db:create db:migrate db:seed
 
 ## Running / Development
 
-So because of the Oauth Census had to use there are special instructions for running a local server. This walkthrough will get you set up to run a local HTTPS server so you can run dev server and test locally.
+Because of the Oauth Census, you must follow these special instructions for setting up and running a local server.
 
 ## 1) Create your private key (any password will do, we remove it below)
 
